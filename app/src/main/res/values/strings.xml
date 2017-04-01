@@ -19,4 +19,5 @@
     <string name="title_activity_security_landing_page">SecurityLandingPage</string>
     <string name="title_activity_check_in">CheckIn</string>
     <string name="title_activity_check_out">CheckOut</string>
+    <string name="auth_failed">Incorroct email or password</string>
 </resources>

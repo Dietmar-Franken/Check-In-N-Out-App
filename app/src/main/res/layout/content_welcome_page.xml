@@ -9,11 +9,11 @@
     tools:showIn="@layout/activity_welcome_page">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/goToLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Login"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="170dp"
-        android:onClick="test"/>
+        android:onClick="goToLogin"/>
 </RelativeLayout>

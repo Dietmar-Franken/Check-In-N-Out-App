@@ -27,8 +27,8 @@ public class WelcomePage extends AppCompatActivity {
         });
     }
 
-    public void test(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 
