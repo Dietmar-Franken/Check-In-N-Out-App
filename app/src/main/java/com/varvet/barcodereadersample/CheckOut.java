@@ -6,8 +6,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
+
+import com.varvet.barcodereadersample.model.Appointment;
+
+import java.util.ArrayList;
 
 public class CheckOut extends AppCompatActivity {
+    private ListView appointments;
+    private ArrayList<Appointment> defaultList = new ArrayList<>();
+    private AppointmentAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +33,20 @@ public class CheckOut extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        appointments = (ListView) findViewById(R.id.appointment_list);
+        //Set defaultlist for database
+        //Set adapter
+        //list as clickable
+    }
+
+    public void checkout(View view) {
+
+    }
+
+    //Updates list
+    public void refresh() {
+
     }
 
 }

@@ -6,16 +6,36 @@ package com.varvet.barcodereadersample.model;
 
 public class User {
 
+    private String email;
+    private String password;
     private String firstName;
     private String lastName;
     private Role role;
     private int userId;
 
-    public User(String firstName, String lastName, Role role, int userId) {
+    public User(String email, String password, String firstName, String lastName, Role role, int userId) {
+        this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
         this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -34,6 +54,10 @@ public class User {
         this.lastName = lastName;
     }
 
+    public String getName() {
+        return firstName + " " + lastName;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -50,10 +74,6 @@ public class User {
         this.userId = userId;
     }
 
-    public String getName() {
-        return firstName + " " + lastName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,6 +82,8 @@ public class User {
         User user = (User) o;
 
         if (userId != user.userId) return false;
+        if (!email.equals(user.email)) return false;
+        if (!password.equals(user.password)) return false;
         if (!firstName.equals(user.firstName)) return false;
         if (!lastName.equals(user.lastName)) return false;
         return role == user.role;
@@ -70,7 +92,9 @@ public class User {
 
     @Override
     public int hashCode() {
-        int result = firstName.hashCode();
+        int result = email.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + firstName.hashCode();
         result = 31 * result + lastName.hashCode();
         result = 31 * result + role.hashCode();
         result = 31 * result + userId;
@@ -80,7 +104,9 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", role=" + role +
                 ", userId=" + userId +

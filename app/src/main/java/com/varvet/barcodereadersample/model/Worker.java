@@ -5,21 +5,21 @@ package com.varvet.barcodereadersample.model;
  */
 
 public class Worker extends User {
-    private int roomNumber;
+    private String room;
     private int phoneNumber;
 
-    public Worker(String firstName, String lastName, Role role, int userId, int roomNumber, int phoneNumber) {
+    public Worker(String firstName, String lastName, Role role, int userId, String room, int phoneNumber) {
         super(firstName, lastName, role, userId);
-        this.roomNumber = roomNumber;
+        this.room = room;
         this.phoneNumber = phoneNumber;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public String getRoom() {
+        return room;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public int getPhoneNumber() {
@@ -33,7 +33,7 @@ public class Worker extends User {
     @Override
     public String toString() {
         return super.toString() + "Worker{" +
-                "roomNumber=" + roomNumber +
+                "room=" + room +
                 ", phoneNumber=" + phoneNumber +
                 '}';
     }

@@ -9,14 +9,16 @@ import java.util.Date;
 public class Appointment {
     private Customer customer;
     private Worker worker;
-    private int roomNumber;
+    private String room;
     private Date time;
+    private int id;
 
-    public Appointment(Customer customer, Worker worker, Date time) {
+    public Appointment(Customer customer, Worker worker, String room, Date time, int id) {
         this.customer = customer;
         this.worker = worker;
+        this.room = room;
         this.time = time;
-        this.roomNumber = worker.getRoomNumber();
+        this.id = id;
     }
 
     public Customer getCustomer() {
@@ -35,12 +37,12 @@ public class Appointment {
         this.worker = worker;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public String getRoom() {
+        return room;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public Date getTime() {
@@ -51,6 +53,14 @@ public class Appointment {
         this.time = time;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,9 +68,10 @@ public class Appointment {
 
         Appointment that = (Appointment) o;
 
-        if (roomNumber != that.roomNumber) return false;
+        if (id != that.id) return false;
         if (!customer.equals(that.customer)) return false;
         if (!worker.equals(that.worker)) return false;
+        if (!room.equals(that.room)) return false;
         return time.equals(that.time);
 
     }
@@ -69,8 +80,9 @@ public class Appointment {
     public int hashCode() {
         int result = customer.hashCode();
         result = 31 * result + worker.hashCode();
-        result = 31 * result + roomNumber;
+        result = 31 * result + room.hashCode();
         result = 31 * result + time.hashCode();
+        result = 31 * result + id;
         return result;
     }
 
@@ -79,8 +91,9 @@ public class Appointment {
         return "Appointment{" +
                 "customer=" + customer +
                 ", worker=" + worker +
-                ", roomNumber=" + roomNumber +
+                ", room='" + room + '\'' +
                 ", time=" + time +
+                ", id=" + id +
                 '}';
     }
 }
