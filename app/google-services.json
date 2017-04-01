@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "636077247417",
+    "firebase_url": "https://in-n-out-9f5b3.firebaseio.com",
+    "project_id": "in-n-out-9f5b3",
+    "storage_bucket": "in-n-out-9f5b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636077247417:android:4b525e4ef7ffcf4d",
+        "android_client_info": {
+          "package_name": "com.varvet.barcodereadersample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636077247417-vf8n62nb8j9em29cusd9eeo7erslkkva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.varvet.barcodereadersample",
+            "certificate_hash": "df078dc8c5c330a0d2455ee33779da7573d39b8a"
+          }
+        },
+        {
+          "client_id": "636077247417-d3b3hjpodhu4uhhm76uju7b0jakqiudb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHzMxq0oT2h4Yz19OdDzbzUCLfU40soV4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636077247417-d3b3hjpodhu4uhhm76uju7b0jakqiudb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
