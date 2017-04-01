@@ -34,10 +34,6 @@
             android:label="@string/title_activity_security_landing_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckIn"
-            android:label="@string/title_activity_check_in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".CheckOut"
             android:label="@string/title_activity_check_out"
             android:theme="@style/AppTheme.NoActionBar"></activity>

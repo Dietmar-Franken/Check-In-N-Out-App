@@ -1,5 +1,6 @@
 package com.varvet.barcodereadersample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,4 +27,18 @@ public class SecurityLandingPage extends AppCompatActivity {
         });
     }
 
+    public void toQRScanningPage(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void toCheckoutPage(View view) {
+        Intent intent = new Intent(this, CheckOut.class);
+        startActivity(intent);
+    }
+
+    public void cancelFromSecurity(View view) {
+        Intent intent = new Intent(this, WelcomePage.class);
+        startActivity(intent);
+    }
 }
