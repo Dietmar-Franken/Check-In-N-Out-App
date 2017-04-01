@@ -1,4 +1,4 @@
-package hackgsu.checkin_n_out;
+package hackgsu.checkin_n_out.controller;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import hackgsu.checkin_n_out.R;
 
 public class MainActivity extends AppCompatActivity {
 
