@@ -42,8 +42,7 @@ public class InfoPage extends AppCompatActivity {
         //list as clickable
         //in clickable create dialog input box
         defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Andrew", "Le", 32, 3), new Worker("alex@gmail.com", "3", "Alex", "Le", 32, "102b", 2), new Date(),3));
-        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Jonathan", "Lian", 32, 3), new Worker("alex@gmail.com", "3", "Alex", "Le", 32, "02a", 2), new Date(),3));
-        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Wesley", "Cheung", 32, 3), new Worker("alex@gmail.com", "3", "Jeff", "Ma", 32, "102b", 2), new Date(),3));
+        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Andrew", "Le", 32, 3), new Worker("alex@gmail.com", "3", "Jeff", "Ma", 32, "02b", 2), new Date(),3));
 
         adapter = new AppointmentAdapter(this, R.layout.appointment_row, defaultList);
         appointments.setAdapter(adapter);
