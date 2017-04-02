@@ -8,8 +8,8 @@ public class Worker extends User {
     private String room;
     private int phoneNumber;
 
-    public Worker(String email, String password, String firstName, String lastName, Role role, int userId, String room, int phoneNumber) {
-        super(email, password, firstName, lastName, role, userId);
+    public Worker(String email, String password, String firstName, String lastName, int userId, String room, int phoneNumber) {
+        super(email, password, firstName, lastName, Role.Worker, userId);
         this.room = room;
         this.phoneNumber = phoneNumber;
     }

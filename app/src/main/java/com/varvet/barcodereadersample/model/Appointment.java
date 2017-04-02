@@ -13,10 +13,10 @@ public class Appointment {
     private Date time;
     private int id;
 
-    public Appointment(Customer customer, Worker worker, String room, Date time, int id) {
+    public Appointment(Customer customer, Worker worker, Date time, int id) {
         this.customer = customer;
         this.worker = worker;
-        this.room = room;
+        this.room = worker.getRoom();
         this.time = time;
         this.id = id;
     }

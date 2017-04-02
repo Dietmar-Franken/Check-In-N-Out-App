@@ -77,42 +77,47 @@ public class LoginPage extends AppCompatActivity {
         email = emailEdit.getText().toString();
         password = passwordEdit.getText().toString();
 
-        Connection conn = null;
-
-        try {
-            // Connect method #1
-            String dbURL1 = "jdbc:postgres//postgres:alexle262@localhost/inout";
-            conn = DriverManager.getConnection(dbURL1);
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (conn != null && !conn.isClosed()) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        if (conn != null) {
-            try {
-                String sql;
-                sql = "SELECT * FROM USERS;";
-
-                Statement st = conn.createStatement();
-                ResultSet rs = st.executeQuery(sql);
-                while (rs.next()) {
-                    //Columens are can be referenced by name.
-                    String relname = rs.getString("relname");
-                }
-                rs.close();
-                st.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-        }
+        String driver ="org.postgresql.Driver";
+//        String url = "jdbc:postgresql://localhost/inout";
+//        String user = "postgres";
+//        String pwd = "alexle262";
+//
+//        Connection conn = null;
+//        try {
+//            Class.forName(driver); //trying to load driver
+//        }
+//        catch (ClassNotFoundException e) {
+//
+//            System.err.println("Can't load driver "+ e.getMessage());
+//        }
+//        try {
+//            conn = DriverManager.getConnection(url, user, pwd);
+//            System.err.println("Conection OK");
+//
+//        }
+//        catch(Exception e) {
+//
+//            System.err.println("Connection Attempt failed");
+//            System.err.println(e.getMessage());
+//        }
+//
+//        if (conn != null) {
+//            try {
+//                String sql;
+//                sql = "SELECT * FROM USERS;";
+//
+//                Statement st = conn.createStatement();
+//                ResultSet rs = st.executeQuery(sql);
+//                while (rs.next()) {
+//                    //Columens are can be referenced by name.
+//                    String relname = rs.getString("relname");
+//                }
+//                rs.close();
+//                st.close();
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//            }
+//        }
 
 
     }
@@ -160,9 +165,12 @@ public class LoginPage extends AppCompatActivity {
                             Toast.makeText(LoginPage.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
                         } else {
+
 //                            if (mAuth.getCurrentUser().getUid() ) {
 //                                startQRScanner();
-//                            }
+//                            } would check type of user
+
+                            startQRScanner();
 
                         }
 
@@ -194,7 +202,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     public void startQRScanner() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, QRCodeGenerator.class);
         startActivity(intent);
     }
 }

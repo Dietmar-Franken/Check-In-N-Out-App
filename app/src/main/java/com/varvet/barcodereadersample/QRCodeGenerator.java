@@ -1,5 +1,6 @@
 package com.varvet.barcodereadersample;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -116,6 +117,16 @@ public class QRCodeGenerator extends AppCompatActivity {
         } catch (WriterException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void startInfoPage(View view) {
+        Intent intent = new Intent(this, InfoPage.class);
+        startActivity(intent);
+    }
+
+    public void startSecurity(View view) {
+        Intent intent = new Intent(this, SecurityLandingPage.class);
+        startActivity(intent);
     }
 
 }

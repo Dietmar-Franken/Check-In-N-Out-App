@@ -6,8 +6,19 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
+
+import com.varvet.barcodereadersample.model.Appointment;
+import com.varvet.barcodereadersample.model.Customer;
+import com.varvet.barcodereadersample.model.Worker;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class InfoPage extends AppCompatActivity {
+    private ListView appointments;
+    private ArrayList<Appointment> defaultList = new ArrayList<>();
+    private AppointmentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +35,22 @@ public class InfoPage extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        appointments = (ListView) findViewById(R.id.list_of_appoint);
+        //Set defaultlist for database
+        //Set adapter
+        //list as clickable
+        //in clickable create dialog input box
+        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Andrew", "Le", 32, 3), new Worker("alex@gmail.com", "3", "Alex", "Le", 32, "102b", 2), new Date(),3));
+        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Jonathan", "Lian", 32, 3), new Worker("alex@gmail.com", "3", "Alex", "Le", 32, "02a", 2), new Date(),3));
+        defaultList.add(new Appointment(new Customer("le@gmail.com", "3", "Wesley", "Cheung", 32, 3), new Worker("alex@gmail.com", "3", "Jeff", "Ma", 32, "102b", 2), new Date(),3));
+
+        adapter = new AppointmentAdapter(this, R.layout.appointment_row, defaultList);
+        appointments.setAdapter(adapter);
+
     }
+
+
+
 
 }

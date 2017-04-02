@@ -8,8 +8,8 @@ public class Customer extends User {
 
     private int phoneNumber;
 
-    public Customer(String email, String password, String firstName, String lastName, Role role, int userId, int phoneNumber) {
-        super(email, password, firstName, lastName, role, userId);
+    public Customer(String email, String password, String firstName, String lastName, int userId, int phoneNumber) {
+        super(email, password, firstName, lastName, Role.Customer, userId);
         this.phoneNumber = phoneNumber;
     }
 

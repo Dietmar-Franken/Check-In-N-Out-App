@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="18dp"
-            android:text="AppoitmentID: " />
+            android:text="AppointmentID: " />
 
         <TextView
             android:id="@+id/appointment_Id"

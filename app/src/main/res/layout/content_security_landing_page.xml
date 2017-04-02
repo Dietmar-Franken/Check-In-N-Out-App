@@ -28,6 +28,7 @@
         android:layout_weight="0.14"
         android:text="Check-In"
         android:textSize="25dp"
+        android:onClick="toQRScanningPage"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="244dp" />
 
@@ -38,6 +39,7 @@
         android:layout_weight="0.11"
         android:text="Check-Out"
         android:textSize="25dp"
+        android:onClick="toCheckoutPage"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="314dp" />
 
@@ -46,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.20"
+        android:onClick="cancelFromSecurity"
         android:textSize="25dp"
         android:text="Log out" />
 </LinearLayout>

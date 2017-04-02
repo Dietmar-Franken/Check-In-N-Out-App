@@ -56,7 +56,7 @@ public class AppointmentAdapter extends ArrayAdapter<Appointment> {
             room.setText(item.getRoom());
             cal.setTime(item.getTime());
             time.setText(cal.get(Calendar.DATE) + " " + cal.get(Calendar.HOUR) + ":" + cal.get(Calendar.MINUTE));
-            id.setText(item.getId());
+            //id.setText(item.getId());
         }
         return v;
     }
