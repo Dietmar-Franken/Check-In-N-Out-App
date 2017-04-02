@@ -38,6 +38,7 @@ public class CheckOut extends AppCompatActivity {
         //Set defaultlist for database
         //Set adapter
         //list as clickable
+        //in clickable create dialog input box
     }
 
     public void checkout(View view) {

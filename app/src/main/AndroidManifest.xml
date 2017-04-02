@@ -40,6 +40,10 @@
         <activity
             android:name=".QRCodeGenerator"
             android:label="@string/title_activity_qrcode_generator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InfoPage"
+            android:label="@string/title_activity_info_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
