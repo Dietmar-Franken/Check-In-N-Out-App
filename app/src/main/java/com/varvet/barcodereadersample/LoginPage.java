@@ -22,7 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 
@@ -75,26 +77,45 @@ public class LoginPage extends AppCompatActivity {
         email = emailEdit.getText().toString();
         password = passwordEdit.getText().toString();
 
-        Connection conn1 = null;
+        Connection conn = null;
 
         try {
             // Connect method #1
-            String dbURL1 = "jdbc:postgresql:ProductDB1?user=root&password=secret";
-            conn1 = DriverManager.getConnection(dbURL1);
+            String dbURL1 = "jdbc:postgres//postgres:alexle262@localhost/inout";
+            conn = DriverManager.getConnection(dbURL1);
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             try {
-                if (conn1 != null && !conn1.isClosed()) {
-                    conn1.close();
+                if (conn != null && !conn.isClosed()) {
+                    conn.close();
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }
-    }
 
+        if (conn != null) {
+            try {
+                String sql;
+                sql = "SELECT * FROM USERS;";
+
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                while (rs.next()) {
+                    //Columens are can be referenced by name.
+                    String relname = rs.getString("relname");
+                }
+                rs.close();
+                st.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+
+    }
 
     @Override
     public void onStart() {

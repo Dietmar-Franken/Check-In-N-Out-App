@@ -36,6 +36,10 @@
         <activity
             android:name=".CheckOut"
             android:label="@string/title_activity_check_out"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".QRCodeGenerator"
+            android:label="@string/title_activity_qrcode_generator"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

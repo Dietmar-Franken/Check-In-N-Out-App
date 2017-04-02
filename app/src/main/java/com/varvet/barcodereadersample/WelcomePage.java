@@ -37,4 +37,9 @@ public class WelcomePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void test2(View view) {
+        Intent intent = new Intent(this, QRCodeGenerator.class);
+        startActivity(intent);
+    }
+
 }
