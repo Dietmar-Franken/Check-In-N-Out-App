@@ -16,4 +16,15 @@
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="170dp"
         android:onClick="goToLogin"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goToLoginButton"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="192dp"
+        android:layout_toEndOf="@+id/goToLoginButton"
+        android:text="Button"
+        android:onClick="test"/>
 </RelativeLayout>

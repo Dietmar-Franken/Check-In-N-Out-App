@@ -19,6 +19,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+
 public class LoginPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -67,6 +74,25 @@ public class LoginPage extends AppCompatActivity {
 
         email = emailEdit.getText().toString();
         password = passwordEdit.getText().toString();
+
+        Connection conn1 = null;
+
+        try {
+            // Connect method #1
+            String dbURL1 = "jdbc:postgresql:ProductDB1?user=root&password=secret";
+            conn1 = DriverManager.getConnection(dbURL1);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (conn1 != null && !conn1.isClosed()) {
+                    conn1.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
 

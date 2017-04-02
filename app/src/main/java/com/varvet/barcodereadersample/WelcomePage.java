@@ -32,4 +32,9 @@ public class WelcomePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void test(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
